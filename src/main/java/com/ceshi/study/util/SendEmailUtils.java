@@ -43,7 +43,7 @@ public class SendEmailUtils {
             return false;
         }
         // 发件人电子邮箱
-        final String from = "shenyafei@labifenqi.com";
+        final String from = "";
         // 发件人电子邮箱密码
         final String pass = "";
         // 指定发送邮件的主机为 smtp.qq.com
@@ -130,7 +130,7 @@ public class SendEmailUtils {
 
     public static void main(String[] args){
         List<String> receiveAddressList = new ArrayList<>();
-        receiveAddressList.add("522408323@qq.com");
+        receiveAddressList.add("522@qq.com");
         List<String> copyAddressList = new ArrayList<>();
         String subject = "测试主题";
         String msg = "测试内容";
