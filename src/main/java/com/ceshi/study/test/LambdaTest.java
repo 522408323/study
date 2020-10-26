@@ -2,10 +2,7 @@ package com.ceshi.study.test;
 
 import com.ceshi.study.model.User;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -102,7 +99,7 @@ public class LambdaTest {
     }
 
     public static void main(String[] args) {
-        //过滤
+       /* //过滤
         filter();
         //去重
         distinct();
@@ -114,6 +111,23 @@ public class LambdaTest {
         //排序
         sort();
         //复杂排序
-        moreSort();
+        moreSort();*/
+
+       /* List<User> list = new ArrayList<>();
+        list.add(new User(1,"张三1",10));
+        list = list.stream().limit(2).collect(Collectors.toList());
+        list.stream().forEach(e-> System.out.println(e.toString()));*/
+
+        List<User> list = new ArrayList<>();
+        list.add(new User(1,"张三1",10));
+        list.add(new User(1,"张三2",20));
+        list.add(new User(2,"张三3",30));
+        System.out.println(list.stream().map(User::getId).count());
+        System.out.println(list.stream().map(User::getId).distinct().count());
+        for (int i=0;i<10;i++) {
+           // System.out.println((int)Math.random() * 10);
+            System.out.println(new Random().nextInt(10));
+        }
+
     }
 }
