@@ -2,6 +2,7 @@ package com.ceshi.study.test;
 
 import com.alibaba.fastjson.JSON;
 import com.ceshi.study.model.User;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
@@ -135,7 +136,21 @@ public class CeshiTest {
         for(Integer s : listB) {
             System.out.println(s);
         }*/
-        System.out.println(doubleToStr(232.00));
+        //System.out.println(doubleToStr(232.00));
+       /* Hashtable hashtable  = new Hashtable<>();
+        hashtable.put("a","1");
+        hashtable.put("b","2");
+        hashtable.put("c","3");
+
+        Iterator iterator =hashtable.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry entry = (Map.Entry)iterator.next();
+            System.out.println(entry.getKey() + "--------"+entry.getValue());
+        }*/
+
+
+       String a = " aaa";
+        System.out.println(StringUtils.isNotBlank(a));
     }
 
     public static BigDecimal divideOperate(String div1, String div2){
