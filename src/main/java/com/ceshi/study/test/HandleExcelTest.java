@@ -81,11 +81,11 @@ public class HandleExcelTest {
             String id = getCellValue(row,0);
             stringBuffer.append("{").append("\"hospitalId\" : NumberLong(\"").append(id).append("\")").append("},");
             //获取
-            String b1 = getCellValue(row,4);//捐卵服务
-            String b2 = getCellValue(row,5);//捐赠胚胎服务
-            String b4 = getCellValue(row,6);//胚胎冷冻服务
-            String b5 = getCellValue(row,7);//卵子冷冻服务
-            String b3 = getCellValue(row,8);//单身女性
+            String b1 = getCellValue(row,4);//juan luan服务
+            String b2 = getCellValue(row,5);//peitai服务
+            String b4 = getCellValue(row,6);//peitailengdong服务
+            String b5 = getCellValue(row,7);//luan zi leng dong 服务
+            String b3 = getCellValue(row,8);//danshen
             String b6 = getCellValue(row,9);//第三方
             if (StringUtils.isEmpty(b1)) {
                 continue;
@@ -134,19 +134,19 @@ public class HandleExcelTest {
             } else {
                 stringBuffer.append("\"statisticsInfo.cdcAuthStatus\":NumberInt(0),");
             }
-            String p1 = getCellValue(row,12);//男性1
-            String p2 = getCellValue(row,13);//子宫
-            String p3 = getCellValue(row,14);//输卵管
-            String p5 = getCellValue(row,15);//排卵障碍
-            String p13 = getCellValue(row,16);//子宫问题
-            String p9 = getCellValue(row,17);//三代试管
-            String p6 = getCellValue(row,18);//第三方辅助
-            String p10 = getCellValue(row,19);//卵巢能力差
-            String p12 = getCellValue(row,20);//卵子或胚胎
-            String p7 = getCellValue(row,21);//反复妊娠
-            String p4 = getCellValue(row,22);//其他-不孕症
-            String p8 = getCellValue(row,23);//其他-无
-            String p11 = getCellValue(row,24);//其他-不明原因
+            String p1 = getCellValue(row,12);
+            String p2 = getCellValue(row,13);
+            String p3 = getCellValue(row,14);
+            String p5 = getCellValue(row,15);
+            String p13 = getCellValue(row,16);
+            String p9 = getCellValue(row,17);
+            String p6 = getCellValue(row,18);
+            String p10 = getCellValue(row,19);
+            String p12 = getCellValue(row,20);
+            String p7 = getCellValue(row,21);
+            String p4 = getCellValue(row,22);
+            String p8 = getCellValue(row,23);
+            String p11 = getCellValue(row,24);
 
             StringBuffer pp = new StringBuffer("\"statisticsInfo.patientTotalDataList\":[");
             if (!StringUtils.isEmpty(p1)) {
