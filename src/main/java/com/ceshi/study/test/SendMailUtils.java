@@ -212,6 +212,32 @@ public class SendMailUtils {
         sendMail2(receiveAddressList,copyAddressList,"测试邮件",strsTcontent.toString(),"","");
     }
 
+    /****
+     * 邮件发送针对springboot框架有依赖的jar包
+     * <dependency>
+     * 			<groupId>org.springframework.boot</groupId>
+     * 			<artifactId>spring-boot-starter-mail</artifactId>
+     * </dependency>
+     * 配置文件yml中添加下面配置：
+     * spring:
+     *   mail:
+     *     host: smtp.exmail.qq.com
+     *     username: 邮箱账号
+     *     password: 密码
+     *     port: 465
+     *     properties:
+     *       mail:
+     *         smtp:
+     *           auth: true
+     *           socketFactory:
+     *             port: 465
+     *             class: javax.net.ssl.SSLSocketFactory
+     *             fallback: false
+     *           ssl:
+     *             enable: true
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         sendMail2(Arrays.asList(""),new ArrayList<>(),"张三-201010101-AMH健康报告","张三的文本","https://cos.shuimuglobal.com/static/AmhReport/pdf-10.pdf","aaa.pdf");
         //sendHtmlEmail(Arrays.asList(""),new ArrayList<>());
