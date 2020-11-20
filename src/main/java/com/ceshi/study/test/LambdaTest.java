@@ -98,6 +98,21 @@ public class LambdaTest {
         list.stream().forEach(e-> System.out.println(e.toString()));
     }
 
+    public static void StringToLong(){
+        List<User> list = new ArrayList<>();
+        list.add(new User(1,"张三1",10));
+        list.add(new User(2,"张三2",20));
+        list.add(new User(3,"张三3",30));
+        List<String> list2 = list.stream().map(User::getId).map(String::valueOf).collect(Collectors.toList());
+        list2.stream().forEach(e-> {
+            if (e instanceof String) {
+                System.out.println("String:"+ e);
+            } else {
+                System.out.println("非Str:"+ e);
+            }
+        });
+   }
+
     public static void main(String[] args) {
        /* //过滤
         filter();
@@ -117,7 +132,7 @@ public class LambdaTest {
         list.add(new User(1,"张三1",10));
         list = list.stream().limit(2).collect(Collectors.toList());
         list.stream().forEach(e-> System.out.println(e.toString()));*/
-
+/*
         List<User> list = new ArrayList<>();
         list.add(new User(1,"张三1",10));
         list.add(new User(1,"张三2",20));
@@ -127,7 +142,7 @@ public class LambdaTest {
         for (int i=0;i<10;i++) {
            // System.out.println((int)Math.random() * 10);
             System.out.println(new Random().nextInt(10));
-        }
-
+        }*/
+        StringToLong();
     }
 }

@@ -2,6 +2,7 @@ package com.ceshi.study.test;
 
 import com.alibaba.fastjson.JSON;
 import com.ceshi.study.model.User;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 
@@ -77,7 +78,7 @@ public class CeshiTest {
         }
         return value;
     }
-    public static void main(String[] args){
+    public static void main(String[] args)throws Exception {
 
         Random random = new Random();
         /*for (int i=0;i<=10;i++) {
@@ -148,9 +149,58 @@ public class CeshiTest {
             System.out.println(entry.getKey() + "--------"+entry.getValue());
         }*/
 
-
+/*
        String a = " aaa";
-        System.out.println(StringUtils.isNotBlank(a));
+        System.out.println(StringUtils.isNotBlank(a));*/
+        Date beginDate = paraseDate("2020-11-10","yyyy-MM-dd");
+        Date endDate = paraseDate("2020-11-17","yyyy-MM-dd");
+        List<String> list = getDateYMdList(beginDate,endDate);
+        list.stream().forEach(e->{
+            System.out.println(e);
+        });
+    }
+
+    public static Date paraseDate(String str , String pattern) throws Exception {
+        SimpleDateFormat format = new SimpleDateFormat(pattern);
+        return format.parse(str);
+    }
+
+    private static List<String> getDateYMdList(Date startDate, Date endDate){
+        List<String> list = new ArrayList<>();
+        if (startDate == null || endDate == null) {
+            return list;
+        }
+        while(true){
+            if (endDate.getTime() < startDate.getTime()) {
+                break;
+            }
+            String ymd = getDateTime(startDate,"yyyy-MM-dd");
+            list.add(ymd);
+            startDate = getDateAfter(startDate,1);
+        }
+        return list;
+    }
+
+    /**
+     * 获取指定日期的指定的格式的字符串格式
+     * @param date
+     * @param pattern
+     * @return
+     */
+    public static String getDateTime(Date date , String pattern){
+        SimpleDateFormat format = new SimpleDateFormat(pattern);
+        return format.format(date);
+
+    }
+
+    /**
+     * 得到几天后的时间
+     */
+    public static Date getDateAfter(Date d, int day) {
+        Calendar now = Calendar.getInstance();
+        now.setTime(d);
+        now.set(Calendar.DATE, now.get(Calendar.DATE) + day);
+        return now.getTime();
     }
 
     public static BigDecimal divideOperate(String div1, String div2){
