@@ -152,12 +152,13 @@ public class CeshiTest {
 /*
        String a = " aaa";
         System.out.println(StringUtils.isNotBlank(a));*/
-        Date beginDate = paraseDate("2020-11-10","yyyy-MM-dd");
+      /*  Date beginDate = paraseDate("2020-11-10","yyyy-MM-dd");
         Date endDate = paraseDate("2020-11-17","yyyy-MM-dd");
         List<String> list = getDateYMdList(beginDate,endDate);
         list.stream().forEach(e->{
             System.out.println(e);
-        });
+        });*/
+        System.out.println(UUID.randomUUID().toString().length());
     }
 
     public static Date paraseDate(String str , String pattern) throws Exception {
